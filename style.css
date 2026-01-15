@@ -1,0 +1,154 @@
+/* ===============================
+   RESET + BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sarabun", "TH Sarabun New", sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ===============================
+   NAVBAR + BACKGROUND IMAGE
+================================ */
+.main-nav {
+  position: relative;
+  background-image: url("../img/nav.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid #ffd369;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* overlay */
+.main-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* ดันเนื้อหาขึ้นเหนือรูป */
+.main-nav * {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+
+/* ===============================
+   LOGO + TITLE
+================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img img {
+  height: 70px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.title-main {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.title-sub {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ===============================
+   MENU
+================================ */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li a.active {
+  color: #ffd369;
+}
+
+.menu li a:hover::after,
+.menu li a.active::after {
+  width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .title-main {
+    font-size: 16px;
+  }
+
+  .title-sub {
+    font-size: 14px;
+  }
+}
