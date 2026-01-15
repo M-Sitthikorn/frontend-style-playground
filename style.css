@@ -21,6 +21,7 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
+  background-color: #242424;
 }
 
 /* ===============================
@@ -34,6 +35,9 @@ body {
   border-bottom: 4px solid #ffd369;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+
+
 
 /* overlay */
 .main-nav::before {
